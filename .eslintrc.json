@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "settings": {
+      "react":{
+        "version": "detect"
+      }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks":"error",
+      "react-hooks/exhaustive-deps":"warn",
+      // Stop asking for PropTypes since we are using TS
+      "react-prop-types":"off",
+      // Doesn't need to import React if it is already globally imported to every file
+      "react/react-in-jsx-scope":"off",
+      // Doesn't need to explicit set the return type if it is already inferred
+      "@typescript-eslint/explicit-module-boundary-types":"off",
+      "prettier/prettier":["error"]
+    }
+}
